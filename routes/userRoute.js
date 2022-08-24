@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const con = require("../lib/db_connection");
+const bcrypt = require("bcryptjs");
 
 // GETTING ALL USERS
 
@@ -87,3 +88,32 @@ router.delete("/:id", (req, res) => {
 });
 
 module.exports = router;
+
+// REGISTER ROUTE
+
+router.post("/register", (req, res) => {
+  try {
+    let sql = "INSERT INTO users SET ?";
+    const { full_name, user_email, user_password, user_type } = req.body;
+
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(user_password, salt);
+
+    let user = {
+      full_name,
+      user_email,
+      user_password: hash,
+      user_type,
+    };
+
+    con.query(sql, user, (err, result) => {
+      if (err) throw err;
+      console.log(result);
+      res.send(
+        `User ${(user.full_name, user.user_email)} was created successfully`
+      );
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
