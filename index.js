@@ -21,6 +21,7 @@ const userRoutes = require("./routes/userRoute");
 const movieRoute = require("./routes/movieRoute");
 const seriesRoute = require("./routes/seriesRoute");
 const comingmoviesRoute = require("./routes/comingmovieRoute");
+const dealsRoute = require("./routes/dealsRoute");
 
 // USING THE ROUTES
 
@@ -28,3 +29,4 @@ app.use("/users", userRoutes);
 app.use("/movies", movieRoute);
 app.use("/series", seriesRoute);
 app.use("/coming", comingmoviesRoute);
+app.use("/deals", dealsRoute);
