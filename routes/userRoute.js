@@ -117,3 +117,34 @@ router.post("/register", (req, res) => {
     console.log(error);
   }
 });
+
+// LOGIN ROUTE
+
+router.post("/login", (req, res) => {
+  try {
+    let sql = "SELECT * FROM users WHERE ?";
+    let user = {
+      user_email: req.body.user_email,
+    };
+
+    con.query(sql, user, async (err, result) => {
+      if (err) throw err;
+      if (result.length === 0) {
+        res.send("Email not found please register");
+      } else {
+        const matching = await bcrypt.compare(
+          req.body.user_password,
+          result[0].user_password
+        );
+
+        if (!matching) {
+          res.send("Password Incorrect");
+        } else {
+          res.send(result);
+        }
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
