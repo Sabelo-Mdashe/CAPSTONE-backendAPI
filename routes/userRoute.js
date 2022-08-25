@@ -74,7 +74,7 @@ router.put("/:id", (req, res) => {
 
 // DELETING A USER
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", middleware, (req, res) => {
   try {
     con.query(
       `DELETE FROM users WHERE user_id=${req.params.id}`,
