@@ -105,7 +105,7 @@ router.post("/register", (req, res) => {
       full_name,
       user_email,
       user_password: hash,
-      user_type,
+      user_type: "user",
     };
 
     con.query(sql, user, (err, result) => {
