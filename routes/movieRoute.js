@@ -44,10 +44,11 @@ router.post("/", (req, res) => {
     release_date,
     movie_price,
     movie_rating,
+    background,
   } = req.body;
   try {
     con.query(
-      `INSERT INTO movies (movie_name,movie_description,movie_genre,movie_poster,release_date,movie_price,movie_rating) VALUES ('${movie_name}','${movie_description}','${movie_genre}','${movie_poster}','${release_date}','${movie_price}','${movie_rating}')`,
+      `INSERT INTO movies (movie_name,movie_description,movie_genre,movie_poster,release_date,movie_price,movie_rating,background) VALUES ('${movie_name}','${movie_description}','${movie_genre}','${movie_poster}','${release_date}','${movie_price}','${movie_rating}','${background}')`,
       (err, result) => {
         if (err) throw err;
         res.send(result);
@@ -70,10 +71,11 @@ router.put("/:id", (req, res) => {
     release_date,
     movie_price,
     movie_rating,
+    background,
   } = req.body;
   try {
     con.query(
-      `UPDATE movies SET movie_name='${movie_name}', movie_description='${movie_description}', movie_genre='${movie_genre}', movie_poster='${movie_poster}', release_date='${release_date}', movie_price='${movie_price}', movie_rating='${movie_rating}' WHERE movie_id=${req.params.id}`,
+      `UPDATE movies SET movie_name='${movie_name}', movie_description='${movie_description}', movie_genre='${movie_genre}', movie_poster='${movie_poster}', release_date='${release_date}', movie_price='${movie_price}', movie_rating='${movie_rating}', background='${background}' WHERE movie_id=${req.params.id}`,
       (err, result) => {
         if (err) throw err;
         res.send(result);

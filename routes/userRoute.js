@@ -151,6 +151,8 @@ router.post("/login", (req, res) => {
             },
           };
 
+          res.send(payload);
+
           jwt.sign(
             payload,
             process.env.jwtSecret,

@@ -44,10 +44,11 @@ router.post("/", (req, res) => {
     release_date,
     series_price,
     series_rating,
+    background,
   } = req.body;
   try {
     con.query(
-      `INSERT INTO series (series_name,series_description,series_genre,series_poster,release_date,series_price,series_rating) VALUES ('${series_name}','${series_description}','${series_genre}','${series_poster}','${release_date}','${series_price}','${series_rating}')`,
+      `INSERT INTO series (series_name,series_description,series_genre,series_poster,release_date,series_price,series_rating,background) VALUES ('${series_name}','${series_description}','${series_genre}','${series_poster}','${release_date}','${series_price}','${series_rating}','${background}')`,
       (err, result) => {
         if (err) throw err;
         res.send(result);
@@ -70,10 +71,11 @@ router.put("/:id", (req, res) => {
     release_date,
     series_price,
     series_rating,
+    background,
   } = req.body;
   try {
     con.query(
-      `UPDATE series SET series_name='${series_name}', series_description='${series_description}', series_genre='${series_genre}', series_poster='${series_poster}', release_date='${release_date}', series_price='${series_price}', series_rating='${series_rating}' WHERE series_id=${req.params.id}`,
+      `UPDATE series SET series_name='${series_name}', series_description='${series_description}', series_genre='${series_genre}', series_poster='${series_poster}', release_date='${release_date}', series_price='${series_price}', series_rating='${series_rating}', background='${background}' WHERE series_id=${req.params.id}`,
       (err, result) => {
         if (err) throw err;
         res.send(result);
