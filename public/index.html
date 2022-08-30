@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Routes</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      th {
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>User Routes</h1>
+          <table class="table table-dark table-striped">
+            <tr>
+              <th>Method</th>
+              <th>Route</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>"/users"</td>
+              <td>Gets all users</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>"/users/:id"</td>
+              <td>To get a single user</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>"/users"</td>
+              <td>Adds a user</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>"/users/:id"</td>
+              <td>To edit a users</td>
+            </tr>
+            <tr>
+              <td>DELETE</td>
+              <td>"/users/:id"</td>
+              <td>To delete a users</td>
+            </tr>
+          </table>
+          <h1>Series Routes</h1>
+          <table class="table table-dark table-striped">
+            <tr>
+              <th>Method</th>
+              <th>Route</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>"/series"</td>
+              <td>Gets all series</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>"/series/:id"</td>
+              <td>To get a single series</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>"/series"</td>
+              <td>Adds a series</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>"/series/:id"</td>
+              <td>To edit a series</td>
+            </tr>
+            <tr>
+              <td>DELETE</td>
+              <td>"/series/:id"</td>
+              <td>To delete a series</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col">
+          <h1>Movie Routes</h1>
+          <table class="table table-dark table-striped">
+            <tr>
+              <th>Method</th>
+              <th>Route</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>"/movies"</td>
+              <td>Gets all movies</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>"/movies/:id"</td>
+              <td>To get a single movie</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>"/movies"</td>
+              <td>Adds a movie</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>"/movies/:id"</td>
+              <td>To edit a movie</td>
+            </tr>
+            <tr>
+              <td>DELETE</td>
+              <td>"/movies/:id"</td>
+              <td>To delete a movie</td>
+            </tr>
+          </table>
+          <h1>Deals Routes</h1>
+          <table class="table table-dark table-striped">
+            <tr>
+              <th>Method</th>
+              <th>Route</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>"/deals"</td>
+              <td>Gets all movie deals</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>"/deals/:id"</td>
+              <td>To get a single movie deal</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>"/deals"</td>
+              <td>Adds a movie deal</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>"/deals/:id"</td>
+              <td>To edit a movie deal</td>
+            </tr>
+            <tr>
+              <td>DELETE</td>
+              <td>"/deals/:id"</td>
+              <td>To delete a movie deal</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
