@@ -18,8 +18,10 @@ app.use(express.static("public"));
 
 app.use(
   cors({
-    mode: "no-cors",
+    // mode: "no-cors",
     origin: "*",
+    methods: "*",
+    allowedHeaders: "*",
     credentials: true,
   })
 );
