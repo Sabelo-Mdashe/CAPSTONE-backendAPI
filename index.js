@@ -4,22 +4,22 @@ const cors = require("cors");
 const app = express();
 app.set("port", process.env.PORT || 2121);
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 
 app.use(express.static("public"));
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", "*");
-  res.setHeader("Access-Control-Allow-Methods", "*");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader("Access-Control-Allow-Headers", "*");
+//   res.setHeader("Access-Control-Allow-Methods", "*");
+//   res.setHeader("Access-Control-Allow-Credentials", "true");
+//   next();
+// });
 
 app.use(
   cors({
     mode: "no-cors",
-    origin: ["http://127.0.0.1:8080", "http://localhost:8080"],
+    origin: "*",
     credentials: true,
   })
 );
